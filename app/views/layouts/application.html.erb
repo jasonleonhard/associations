@@ -11,16 +11,66 @@
 <body>
   <nav class="navbar navbar-inverse navbar-static-top">
     <div class="container">
+      
+      <!-- Nesting buttons: First group and assign to the following dropdown  -->
+      <div class="btn-group">
+        <button type="button" class="navbar-inverse navbar-brand dropdown-toggle" data-toggle="dropdown">People & Businesses
+          <span class="caret"></span>
+        </button>
+        <!-- Nesting buttons: Finally use dropdown-menu and add actual links -->
+        <!-- <ul class="nav navbar-nav"> -->
+        <ul class="dropdown-menu">
+          <li><%= link_to "People", people_path %></li>
+          <li><%= link_to "Businesses", businesses_path %></li>
+        </ul>
+      </div>
+
+      <div class="btn-group">
+        <button type="button" class="navbar-inverse navbar-brand dropdown-toggle" data-toggle="dropdown">Users & Posts
+          <span class="caret"></span>
+        </button>
+        <!-- Nesting buttons: Finally use dropdown-menu and add actual links -->
+        <!-- <ul class="nav navbar-nav"> -->
+        <ul class="dropdown-menu">
+          <li><%= link_to "Users", users_path %></li>
+          <li><%= link_to "Posts", posts_path %></li>
+        </ul>
+      </div>
+
+      <div class="btn-group">
+        <button type="button" class="navbar-inverse navbar-brand dropdown-toggle" data-toggle="dropdown">Accounts Customers & Orders
+          <span class="caret"></span>
+        </button>
+        <!-- Nesting buttons: Finally use dropdown-menu and add actual links -->
+        <!-- <ul class="nav navbar-nav"> -->
+        <ul class="dropdown-menu">
+          <li><%= link_to "Accounts", accounts_path %></li>
+          <li><%= link_to "Customers", customers_path %></li>
+          <li><%= link_to "Orders", orders_path %></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- or skip dropdowns and use this -->
+<!--   <nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
       <ul class="nav navbar-nav">
-        <li><%= link_to "People", people_path %></li>
-        <li><%= link_to "Businesses", businesses_path %></li>
-        <li></li>
-        <li><%= link_to "Users", users_path %></li>
-        <li><%= link_to "Posts", posts_path %></li>
+        <li>< % = link_to "People", people_path % ></li>
+        <li>< % = link_to "Businesses", businesses_path % ></li>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li>< % = link_to "Users", users_path % ></li>
+        <li>< % = link_to "Posts", posts_path % ></li>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li>< % = link_to "Accounts", accounts_path % ></li>
+        <li>< % = link_to "Customers", customers_path % ></li>
+        <li>< % = link_to "Orders", orders_path % ></li>
       </ul>
     </div>
   </nav>
-   
+ -->      
   <div class="container">
     <%= yield %>
   </div>
