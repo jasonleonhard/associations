@@ -1,0 +1,28 @@
+<h1><%= @business.name %></h1>
+<hr />
+<h3>Interactions</h3>
+<div class="well">
+  <%= link_to "New Interaction", new_business_interaction_path(@business), class: "btn btn-primary" %>
+</div>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Created On</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <% if @business.interactions.count > 0 %>
+    <% @business.interactions.each do |interaction| %>
+      <tr>
+        <td><%= interaction.description %></td>
+        <td><%= time_ago_in_words interaction.created_at %> ago</td>
+        <td><%= link_to "Edit", edit_business_interaction_path(@business, interaction), class:"btn btn-default" %></td>
+      </tr>
+    <% end %>
+  <% else %>
+    <tr>
+      <td colspan="2">No interactions found for this business.  Click the 'New Interaction' button to create a new interaction.</td>
+    </tr>
+  <% end %>
+</table>

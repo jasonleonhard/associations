@@ -1,0 +1,32 @@
+<h1>Businesses</h1>
+<div class="well">
+<%= link_to "New Business", new_business_path, class: "btn btn-default" %>
+</div>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number of Interactions</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @businesses.count == 0 %>
+      <tr>
+        <td colspan="3">
+          No businesses found.  Click the button above to add a new one.
+        </td>
+      </tr>
+    <% else %>
+      <% @businesses.each do |business| %>
+        <tr>
+          <td><%= link_to business.name, business %></td>
+          <td><%= business.interactions.count %></td>
+          <td><%= link_to "Edit", edit_business_path(business), class: "btn btn-default" %></td>
+          <td><%= link_to 'Destroy', business, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default"  %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

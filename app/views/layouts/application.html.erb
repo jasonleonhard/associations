@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PolymorphicExample</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "http://yandex.st/bootstrap/3.0.2/css/bootstrap.min.css", media: "all" %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "http://yandex.st/bootstrap/3.0.2/js/bootstrap.min.js" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "People", people_path %></li>
+        <li><%= link_to "Businesses", businesses_path %></li>
+        <li></li>
+        <li><%= link_to "Users", users_path %></li>
+        <li><%= link_to "Posts", posts_path %></li>
+      </ul>
+    </div>
+  </nav>
+   
+  <div class="container">
+    <%= yield %>
+  </div>
+
+</body>
+</html>

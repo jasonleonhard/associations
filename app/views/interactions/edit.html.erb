@@ -1,0 +1,10 @@
+<!-- <h1>Editing Interaction for < % = @context.name % ></h1>
+< % = render "form" % > -->
+
+<!-- interaction/edit.html.erb -->
+<% if @context.class == Business %>
+  <h1>Editing Interaction for <%= @context.name %></h1>
+<% else %>
+  <h1>Editing Interaction for <%= @context.first_name %></h1>
+<% end %>
+<%= render "form" %>

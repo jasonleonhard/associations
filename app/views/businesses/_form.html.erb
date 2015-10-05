@@ -1,0 +1,7 @@
+<%= form_for @business do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control", placeholder: "Enter the name of the business" %>
+  </div>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>

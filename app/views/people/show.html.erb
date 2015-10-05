@@ -1,0 +1,28 @@
+<h1><%= "#{@person.first_name} #{@person.last_name}" %></h1>
+<hr />
+<h3>Interactions</h3>
+<div class="well">
+  <%= link_to "New Interaction", new_person_interaction_path(@person), class: "btn btn-primary" %>
+</div>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Created On</th>
+      <td>&nbsp;</td>
+    </tr>
+  </thead>
+  <% if @person.interactions.count > 0 %>
+    <% @person.interactions.each do |interaction| %>
+      <tr>
+        <td><%= interaction.description %></td>
+        <td><%= time_ago_in_words interaction.created_at %> ago</td>
+        <td><%= link_to "Edit", edit_person_interaction_path(@person, interaction), class: "btn btn-default" %></td>
+      </tr>
+    <% end %>
+  <% else %>
+    <tr>
+      <td colspan="2">No interactions found for this person.  Click the 'New Interaction' button to create a new interaction.</td>
+    </tr>
+  <% end %>
+</table>
