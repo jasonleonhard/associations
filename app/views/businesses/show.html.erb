@@ -10,6 +10,8 @@
       <th>Description</th>
       <th>Created On</th>
       <th>&nbsp;</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
     </tr>
   </thead>
   <% if @business.interactions.count > 0 %>
@@ -26,3 +28,6 @@
     </tr>
   <% end %>
 </table>
+
+<%= link_to 'Edit', edit_business_path(@business), class: "btn btn-default" %>
+<%= link_to 'Back', business_path, class: "btn btn-default" %>

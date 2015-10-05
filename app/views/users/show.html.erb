@@ -1,14 +1,32 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<!-- <p>
   <strong>Name:</strong>
-  <%= @user.name %>
+  < % = @user.name % >
 </p>
 
 <p>
   <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+  < % = @user.email % >
+</p> -->
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<!-- or -->
+
+<h1>Users</h1>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <!-- <th>&nbsp;</th> -->
+    </tr>
+  </thead>
+    <tr>
+      <th><%= @user.name %></th>
+      <th><%= @user.email %></th>
+    <tr>
+</table>
+
+<%= link_to 'Edit', edit_user_path(@user), class: "btn btn-default" %>
+<%= link_to 'Back', users_path, class: "btn btn-default" %>

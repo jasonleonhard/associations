@@ -1,17 +1,50 @@
 <!-- /posts/show.html.erb -->
-<p id="notice"><%= notice %></p>
-<p> <strong>Title:</strong> <%= @post.title %> </p>
-<p> <strong>Text:</strong> <%= @post.text %> </p>
+<!-- <p id="notice">< % = notice % ></p>
+<p> <strong>Title:</strong> < % = @post.title % > </p>
+<p> <strong>Text:</strong> < % = @post.text % > </p>
 
 <h2>Add a comment:</h2>
-<%= render 'comments/form' %>
+< % = render 'comments/form' % >
  
-<p> <strong>Comment:</strong> <%= @post.comments %> </p>
-<p> <strong>Comment:</strong> <%= @comments %> </p>
+<p> <strong>Comment:</strong> < % = @post.comments % > </p>
+<p> <strong>Comment:</strong> < % = @comments % > </p>
+
+ -->
+<h1>Posts</h1>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Text</th> <!-- <th>&nbsp;</th> -->
+    </tr>
+  </thead>
+    <tr>
+      <th><%= @post.title %></th>
+      <th><%= @post.text %></th>
+    <tr>
+</table>
+
+<!-- hopefully will impliment comments in post soon -->
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+<br>
 
 
-
-
+ 
+ <table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Commenter</th>
+      <th>Comments</th> 
+    </tr>
+  </thead>
+    <tr>
+      <th><%= @comment %></th>
+      <!-- <th>< % = @comment.body % ></th> -->
+      <th>&nbsp;</th>
+    <tr>
+</table>
 
 <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-default" %>
 <%= link_to 'Back', posts_path, class: "btn btn-default" %>

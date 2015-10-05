@@ -11,6 +11,7 @@
       <th>Number of Interactions</th>
       <th>&nbsp;</th>
       <th>&nbsp;</th>
+      <th>&nbsp;</th>
     </tr>
   </thead>
   <tbody>
@@ -25,6 +26,7 @@
         <tr>
           <td><%= link_to "#{person.first_name} #{person.last_name}", person %></td>
           <td><%= person.interactions.count %></td>
+          <td><%= link_to 'Show', person, class: "btn btn-default" %></td>
           <td><%= link_to "Edit", edit_person_path(person), class: "btn btn-default" %></td>
           <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default"  %></td>
         </tr>

@@ -1,2 +1,4 @@
 <h1>Editing <%= @person.first_name %></h1>
 <%= render "form" %>
+<%= link_to 'Show', @people, class: "btn btn-default" %>
+<%= link_to 'Back', person_path, class: "btn btn-default" %>

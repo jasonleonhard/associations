@@ -11,6 +11,7 @@
       <th>Number of Interactions</th>
       <th>&nbsp;</th>
       <th>&nbsp;</th>
+      <th>&nbsp;</th>
     </tr>
   </thead>
   <tbody>
@@ -25,6 +26,7 @@
         <tr>
           <td><%= link_to business.name, business %></td>
           <td><%= business.interactions.count %></td>
+          <td><%= link_to 'Show', business, class: "btn btn-default" %></td>
           <td><%= link_to "Edit", edit_business_path(business), class: "btn btn-default" %></td>
           <td><%= link_to 'Destroy', business, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default"  %></td>
         </tr>

@@ -1,25 +1,39 @@
-<%= form_for(@post) do |f| %>
-  <% if @post.errors.any? %>
+<!-- < %= form_for(@post) do |f| % >
+  < % if @post.errors.any? % >
     <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
+      <h2>< %= pluralize(@post.errors.count, "error") % > prohibited this post from being saved:</h2>
       <ul>
-      <% @post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+      < % @post.errors.full_messages.each do |message| % >
+        <li>< %= message % ></li>
+      < % end % >
       </ul>
     </div>
-  <% end %>
+  < % end % >
 
   <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    < %= f.label :title % ><br>
+    < %= f.text_field :title % >
   </div>
   <div class="field">
-    <%= f.label :text %><br>
-    <%= f.text_area :text %>
+    < %= f.label :text % ><br>
+    < %= f.text_area :text % >
   </div>
   <div class="actions">
-    <%= f.submit %>
+    < %= f.submit % >
   </div>
+< % end % > -->
+
+
+
+<!-- option 2 -->
+ <%= form_for @post do |f| %>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control", placeholder: "Enter a First Name" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :text %>
+    <%= f.text_field :text, class: "form-control", placeholder: "Enter a Last Name" %>
+  </div>
+  <%= f.submit class: "btn btn-primary" %>
 <% end %>

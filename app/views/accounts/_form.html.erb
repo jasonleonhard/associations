@@ -2,7 +2,6 @@
   <% if @account.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@account.errors.count, "error") %> prohibited this account from being saved:</h2>
-
       <ul>
       <% @account.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -10,8 +9,48 @@
       </ul>
     </div>
   <% end %>
-
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+
+ <!-- < %= form_for(@account) do |f| % >
+  < % if @account.errors.any? % >
+    <div id="error_explanation">
+      <h2>< %= pluralize(@account.errors.count, "error") % > prohibited this account from being saved:</h2>
+      <ul>
+      < % @account.errors.full_messages.each do |message| % >
+        <li>< %= message % ></li>
+      < % end % >
+      </ul>
+    </div>
+  < % end % >
+
+  <div class="field">
+    < %= f.label % ><br>
+    < %= f.text_field % >
+  </div>
+  <div class="field">
+    < %= f.label % ><br>
+    < %= f.text_area % >
+  </div>
+  <div class="actions">
+    < %= f.submit % >
+  </div>
+< % end % > -->
+
+
+
+<!-- option 2 -->
+ <!-- < %= form_for @account do |f| % >
+  <div class="form-group">
+    < %= f.label % >
+    < %= f.text_field  class: "form-control", placeholder: "Enter a First Name" % >
+  </div>
+  <div class="form-group">
+    < %= f.label % >
+    < %= f.text_field, class: "form-control", placeholder: "Enter a Last Name" % >
+  </div>
+  < %= f.submit class: "btn btn-primary" % >
+< % end % > -->
