@@ -1,2 +1,4 @@
-<h1>Edit Business</h1>
+<h1>Editing <%= @business.name %></h1>
 <%= render "form" %>
+<%= link_to 'Show', @business, class: "btn btn-default" %>
+<%= link_to 'Back', business_path, class: "btn btn-default" %>
