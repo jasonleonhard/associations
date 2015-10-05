@@ -1,25 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Customers</h1>
-
-<table>
+<h1>Customers</h1>
+<div class="well">
+<%= link_to "New customer", new_customer_path, class: "btn btn-default" %>
+</div>
+<table class="table table-bordered table-striped">
   <thead>
     <tr>
-      <th colspan="3"></th>
+      <th>Title</th>
+      <th>Text</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
     </tr>
   </thead>
-
   <tbody>
-    <% @customers.each do |customer| %>
+    <% if @customers.count == 0 %>
       <tr>
-        <td><%= link_to 'Show', customer %></td>
-        <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
-        <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td colspan="3">
+          No customers found.  Click the button above to add a new one.
+        </td>
       </tr>
+    <% else %>
+      <% @customers.each do |customer| %>
+        <tr>
+          <td></td>
+          <td></td>
+<!--      <td>< % = link_to customer.title, customer % ></td>
+          <td>< % = link_to customer.text, customer % ></td> -->
+          <td><%= link_to 'Show', customer, class: "btn btn-default" %></td>
+          <td><%= link_to 'Edit', edit_customer_path(customer), class: "btn btn-default" %></td>
+          <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Customer', new_customer_path %>

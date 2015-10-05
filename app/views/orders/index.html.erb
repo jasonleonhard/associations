@@ -1,25 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Orders</h1>
-
-<table>
+<h1>Orders</h1>
+<div class="well">
+<%= link_to "New order", new_order_path, class: "btn btn-default" %>
+</div>
+<table class="table table-bordered table-striped">
   <thead>
     <tr>
-      <th colspan="3"></th>
+      <th>Title</th>
+      <th>Text</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
     </tr>
   </thead>
-
   <tbody>
-    <% @orders.each do |order| %>
+    <% if @orders.count == 0 %>
       <tr>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td colspan="3">
+          No orders found.  Click the button above to add a new one.
+        </td>
       </tr>
+    <% else %>
+      <% @orders.each do |order| %>
+        <tr>
+          <td></td>
+          <td></td>
+<!--      <td>< % = link_to order.title, order % ></td>
+          <td>< % = link_to order.text, order % ></td> -->
+          <td><%= link_to 'Show', order, class: "btn btn-default" %></td>
+          <td><%= link_to 'Edit', edit_order_path(order), class: "btn btn-default" %></td>
+          <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Order', new_order_path %>
