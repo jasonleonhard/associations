@@ -22,13 +22,17 @@ a {
   color: #000;
 
   &:visited {
-    color: #666;
+    color: black;
   }
 
   &:hover {
     color: white !important;;
     background-color: gray;
   }
+}
+
+.btn.btn-primary {
+  color: white;
 }
 
 div {
