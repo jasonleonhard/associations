@@ -19,7 +19,7 @@ pre {
 }
 
 a {
-  color: #000;
+  color: #666;
 
   &:visited {
     color: black;
@@ -27,7 +27,7 @@ a {
 
   &:hover {
     color: white !important;;
-    background-color: gray;
+    background-color: #666 !important;
   }
 }
 
