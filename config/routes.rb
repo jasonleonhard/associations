@@ -14,7 +14,6 @@ Rails.application.routes.draw do
   # get 'interactions/update'
   root to: "people#index"
 
-
 # associations: has_many _____ and belongs_to :_____, dependent: :destroy
   resources :customers  # has_many accounts and orders
     resources :accounts # belongs_to customer
@@ -26,7 +25,7 @@ Rails.application.routes.draw do
   resources :posts do   # parent
     resources :comments # child
   end
-  # root 'posts#index'
+
   # access nested resources this way:
     # def create
     #   @post = Post.find(params[:post_id]) 
@@ -38,6 +37,4 @@ Rails.application.routes.draw do
     #     flash.now[:danger] = "error"
     #   end
     # end
- 
-
 end
